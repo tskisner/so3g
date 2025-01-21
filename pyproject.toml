@@ -1,0 +1,46 @@
+[build-system]
+requires = ["meson >= 1.2.3", "meson-python >= 0.14.0", "numpy"]
+build-backend = "mesonpy"
+
+[project]
+name = "so3g"
+version = "0.2.0"
+description = "Tools for Simons Observatory work with spt3g_software"
+readme = "README.rst"
+maintainers = [
+    { name = "Simons Observatory Collaboration", email = "so_software@simonsobservatory.org" },
+]
+requires-python = ">=3.9"
+dependencies = [
+    "astropy",
+    "matplotlib",
+    "scipy",
+    "ephem",
+    "pytz",
+    "pyaml",
+    "sqlalchemy",
+    "tqdm",
+    "qpoint",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: POSIX",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Topic :: Scientific/Engineering :: Astronomy",
+]
+
+#[project.scripts]
+#flacarray_benchmark = "flacarray.scripts:bench_cli"
+
+# [project.urls]
+# "Documentation" = "https://hpc4cmb.github.io/flacarray/"
+# "Source" = "https://github.com/hpc4cmb/flacarray/"
+# "Issue Tracker" = "https://github.com/hpc4cmb/flacarray/issues"
+
+[tool.meson-python.args]
+compile = ['-j2']
